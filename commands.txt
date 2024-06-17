@@ -1,0 +1,34 @@
+$ docker build . -t mypostgres
+
+$ docker run -p 8888:5000 --name myfirstapp YOUR_USERNAME/myfirstapp
+
+
+$ docker run -p 5446:5000 --name mypostgres
+
+
+ docker run \
+    -p "5434:5432" \
+    --net=app-network \
+    --name=mypostgres \
+    -d \
+    mypostgres
+
+
+        docker run \
+    -p "8070:8080" \
+    --net=app-network \
+    --name=adminer \
+    -d \
+    adminer
+    
+    docker run \
+    -p "8080:8080" \
+    --net=app-network \
+    --name=simple-student-api \
+    -d \
+    simple-student-api
+
+
+
+
+

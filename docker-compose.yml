@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+    backend:
+        build:
+          context: ./API/simple-api-student-main/
+        networks:
+          - app-network
+        depends_on:
+          - database
+        ports: 
+          - "8080:8080"
+        environment: 
+          - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/db
+        container_name: simple-student-api
+
+    database:
+        build:
+          context: ./postgres/
+        networks:
+          - app-network
+        ports:
+          - "5436:5432"
+    httpd:
+        build:
+          context: ./http-server/
+        ports:
+          - "8060:80"
+        networks:
+          - app-network
+        depends_on:
+          - backend
+
+networks:
+    app-network:
