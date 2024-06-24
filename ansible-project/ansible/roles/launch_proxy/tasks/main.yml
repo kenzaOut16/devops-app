@@ -3,7 +3,7 @@
 - name: Run ReverseProxy
   docker_container:
     name: httpd
-    image: massichalal/devops-app-httpd
+    image: kenzaoutayeb/devops-app-httpd
     networks:
       - name: app-network
     ports:

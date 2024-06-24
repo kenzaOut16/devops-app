@@ -3,7 +3,7 @@
 - name: Run APP
   docker_container:
     name: backendapi
-    image: massichalal/tp-devops-api
+    image: kenzaoutayeb/devops-app-api
     env:
       SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/db
     ports:
