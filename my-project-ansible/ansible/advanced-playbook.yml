@@ -1,0 +1,12 @@
+- hosts: all
+  gather_facts: false
+  become: true
+
+# Install Docker
+  roles: 
+    - roles/docker
+    - roles/create_network
+    - roles/launch_database
+    - roles/launch_app
+    - roles/launch_proxy
+  

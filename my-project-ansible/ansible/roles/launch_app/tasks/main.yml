@@ -1,0 +1,14 @@
+---
+# tasks file for roles/launch_app
+- name: Run APP
+  docker_container:
+    name: backendapi
+    image: massichalal/tp-devops-api
+    env:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/db
+    ports:
+      - "8080:8080"
+    networks:
+      - name: app-network
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
